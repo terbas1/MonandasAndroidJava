@@ -66,7 +66,7 @@ public class VentasActivity extends AppCompatActivity  {
                     detallInten.putExtra(DIRECCION_CLIENTE,listaDeVentas.getDireccion());
                     detallInten.putExtra(PAGO_CLIENTE,listaDeVentas.getPago());
                     detallInten.putExtra(ID_VENTA,String.valueOf(listaDeVentas.getId()));
-                    detallInten.putExtra(ESTADO_PRO,listaDeVentas.getEnvio());
+                    detallInten.putExtra(ESTADO_PRO,String.valueOf(listaDeVentas.getEnvio()));
 
                     String feacha1=listaDeVentas.getFecha();
                     String feacha2=feacha1.substring(0,9);

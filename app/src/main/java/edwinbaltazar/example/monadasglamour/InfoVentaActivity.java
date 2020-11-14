@@ -56,19 +56,21 @@ public class InfoVentaActivity extends AppCompatActivity {
         pagoClient.setText("S/. "+pago_cliente);
         fechaClient.setText(fecha_cliente);
         int cambio =0;
-        
-        if(estado_produc=="1" ) {
+        Drawable d1 = getResources().getDrawable(R.drawable.button_info);
+        Drawable d2 = getResources().getDrawable(R.drawable.button_info2);
+        if(estado_produc.equals("1")) {
 
             cambio = R.drawable.button_info;
-           // butonActu.setBackground(cambio);
+            butonActu.setBackground(d1);
             butonActu.setText("Enviar producto");
 
         }else {
-            cambio= button_info2;
-            //butonActu.setBackground(cambio);
+            cambio= R.drawable.button_info2;
+            butonActu.setBackground(d2);
             butonActu.setText("Enviando producto");
 
         }
+
 
     }
 }
