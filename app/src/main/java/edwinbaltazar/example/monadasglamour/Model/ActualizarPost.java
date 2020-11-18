@@ -1,22 +1,22 @@
 package edwinbaltazar.example.monadasglamour.Model;
 
 public class ActualizarPost {
-    private int envio;
-    private int id;
+    private int id_venta;
+    private int estado;
 
-    public int getEnvio() {
-        return envio;
+    public int getId_venta() {
+        return id_venta;
     }
 
-    public void setEnvio(int envio) {
-        this.envio = envio;
+    public void setId_venta(int id_venta) {
+        this.id_venta = id_venta;
     }
 
-    public int getId() {
-        return id;
+    public int getEstado() {
+        return estado;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 }

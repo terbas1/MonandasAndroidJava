@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(email.getText().toString())|| TextUtils.isEmpty(password.getText().toString())){
                     Toast.makeText(MainActivity.this,"Email/Password son Necesarios",Toast.LENGTH_LONG).show();
                 }else{
-                    //Proceso apra logear
+                    //Proceso para logear
                     login();
                 }
             }

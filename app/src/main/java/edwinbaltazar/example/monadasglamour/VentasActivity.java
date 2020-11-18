@@ -86,7 +86,7 @@ public class VentasActivity extends AppCompatActivity  {
     //Lista
     private void getMasVendidos(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.13:3000/")
+                .baseUrl("http://192.168.1.222:3000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

@@ -1,12 +1,12 @@
 package edwinbaltazar.example.monadasglamour;
 
-import edwinbaltazar.example.monadasglamour.Interface.MasVendidosService;
+import edwinbaltazar.example.monadasglamour.Interface.ActualizarService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+public class ApiPut {
     private static Retrofit getRetrofit(){
         HttpLoggingInterceptor httpLoggingInterceptor =new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -20,9 +20,8 @@ public class ApiClient {
                 .build();
         return retrofit;
     }
-    public static UserService getUserService(){
-        UserService userService=getRetrofit().create(UserService.class);
-        return userService;
+    public static ActualizarService getAtualizarService(){
+        ActualizarService actualizarService=getRetrofit().create(ActualizarService.class);
+        return actualizarService;
     }
-
 }
