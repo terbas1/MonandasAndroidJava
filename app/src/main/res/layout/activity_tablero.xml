@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TableroActivity"
-    android:background="@color/pantallaCarga">
+    android:background="@color/colorPrimaryDark">
     <TextView
         android:id="@+id/perfil"
         android:layout_width="wrap_content"
@@ -43,7 +43,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bg_menu">
+        android:background="@drawable/bg_menu"
+        android:backgroundTint="#f6f9fb">
         <LinearLayout
             android:paddingTop="24dp"
             android:paddingBottom="24dp"
@@ -197,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#F3DEFE"
+            android:background="#f6f9fb"
             android:padding="1dp"
             android:layout_margin="1dp"
         >

@@ -10,12 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="VENTAS"
+        android:textColor="#fff"
         android:gravity="center_horizontal"
         android:padding="15dp"
         android:layout_margin="10dp"
         android:textStyle="bold|italic"
         android:textSize="20dp"
-        android:background="@color/pantallaCarga"
+        android:background="@color/colorPrimaryDark"
         />
 
     <ListView
@@ -24,8 +25,9 @@
         android:id="@+id/venta_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFD4C7">
+        android:background="#f6f9fb
 
+">
 
     </ListView>
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".InfoVentaActivity"
-    android:background="@color/pantallaCarga">
+    android:background="#FADCE1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#FFD4C7"
+                android:background="@color/pantallaCarga"
                 android:gravity="center">
                 <TextView
                     android:id="@+id/nombre_producto"

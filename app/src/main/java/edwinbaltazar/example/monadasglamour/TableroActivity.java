@@ -79,7 +79,7 @@ public class TableroActivity extends AppCompatActivity {
     // Consumir api para las ventas
     private void getVenta(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.222:3000/")
+                .baseUrl("https://ecommerce121942.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         VentasService ventasService=retrofit.create(VentasService.class);
@@ -93,7 +93,7 @@ public class TableroActivity extends AppCompatActivity {
                 }
                 List<VentaPost> ventaList = response.body();
                 for (VentaPost ventapost:ventaList){
-                    int content=0;
+                    double content=0;
                     content=ventapost.getVentas();
 
                     ventas.append(""+content);
@@ -112,7 +112,7 @@ public class TableroActivity extends AppCompatActivity {
 
     private void getVisitas(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.222:3000/")
+                .baseUrl("https://ecommerce121942.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         VisitasService visitasService=retrofit.create(VisitasService.class);
@@ -143,7 +143,7 @@ public class TableroActivity extends AppCompatActivity {
     //Consumir api para la cantidad de usuarios
     private void getUsuarios(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.222:3000/")
+                .baseUrl("https://ecommerce121942.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         UsuariosService usuariosService=retrofit.create(UsuariosService.class);
@@ -174,7 +174,7 @@ public class TableroActivity extends AppCompatActivity {
     // Consumir api para las ventas
     private void getProductos(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.222:3000/")
+                .baseUrl("https://ecommerce121942.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ProductosService productosService=retrofit.create(ProductosService.class);
@@ -205,7 +205,7 @@ public class TableroActivity extends AppCompatActivity {
     //Lista
     private void getMasVendidos(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.222:3000/")
+                .baseUrl("https://ecommerce121942.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         MasVendidosService masVendidosService=retrofit.create(MasVendidosService.class);

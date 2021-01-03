@@ -1,13 +1,13 @@
 package edwinbaltazar.example.monadasglamour.Model;
 
 public class VentaPost {
-    private int ventas;
+    private double ventas;
 
-    public int getVentas() {
+    public double getVentas() {
         return ventas;
     }
 
-    public void setVentas(int ventas) {
+    public void setVentas(double ventas) {
         this.ventas = ventas;
     }
 }

@@ -17,13 +17,15 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_width="match_parent"
                 android:src="@drawable/icon"
                 android:layout_height="200dp"
                 android:padding="8dp"
-                android:layout_margin="50dp"/>
+                android:layout_margin="50dp"
+                android:tint="#782431"
+                />
             <!--  Login panel-->
             <LinearLayout
                 android:orientation="horizontal"
@@ -87,16 +89,20 @@
                         android:orientation="vertical"
                         android:layout_width="fill_parent"
                         android:layout_height="60dp">
-                        <EditText
-                            android:id="@+id/edEmail"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginStart="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:hint="Correo Electronico"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:textSize="16dp"
+                            android:textStyle="normal"
+                            android:textSize="16sp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edEmail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textEmailAddress"
                             android:background="@android:color/transparent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
                     <!-- Border -->
@@ -111,16 +117,23 @@
                         android:orientation="vertical"
                         android:layout_width="fill_parent"
                         android:layout_height="60dp">
-                        <EditText
-                            android:id="@+id/edPassword"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginStart="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:hint="Contraseña"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="19dp"
-                            android:textSize="16dp"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            app:endIconMode="password_toggle"
+                            app:endIconTint="@color/colorPrimary">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edPassword"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="textPassword"
-                            android:background="@android:color/transparent"/>
+                            android:background="@android:color/transparent"
+                            />
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </LinearLayout>
 
