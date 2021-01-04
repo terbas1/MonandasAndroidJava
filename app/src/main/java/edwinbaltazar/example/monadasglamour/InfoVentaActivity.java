@@ -94,7 +94,10 @@ public class InfoVentaActivity extends AppCompatActivity {
         int enviarEstado=estadoFinal+1;
         if (enviarEstado==3){
             enviarEstado=2;
+        }else if (enviarEstado==1){
+            enviarEstado=2;
         }
+
 
         ActualizarPost actualizarPost =new ActualizarPost();
         actualizarPost.setId_venta(id_venta);

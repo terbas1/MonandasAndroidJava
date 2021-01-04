@@ -45,6 +45,8 @@ public class ListaDeVentasAdapter extends ArrayAdapter<ListaDeVentas> {
         TextView fecha=convertView.findViewById(R.id.txt_fecha);
         fecha.setText(listaDeVentas.getFecha().substring(0,9));
         TextView proceso=convertView.findViewById(R.id.proceso);
+
+
         proceso.setText(String.valueOf(listaDeVentas.getEnvio()) );
 
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".VentasActivity"
     android:orientation="vertical">
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="VENTAS"
@@ -25,9 +25,9 @@
         android:id="@+id/venta_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f6f9fb
-
-">
+        android:background="#f6f9fb"
+        tools:listitem="@layout/ventas_layout"
+        >
 
     </ListView>
 

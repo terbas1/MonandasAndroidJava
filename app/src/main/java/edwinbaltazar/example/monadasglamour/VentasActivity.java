@@ -99,9 +99,6 @@ public class VentasActivity extends AppCompatActivity  {
                 listaDeVentass=(List<ListaDeVentas>) response.body();
                 listViewVentas.setAdapter(new ListaDeVentasAdapter(getApplicationContext(),listaDeVentass));
 
-
-
-
             }
 
             @Override
