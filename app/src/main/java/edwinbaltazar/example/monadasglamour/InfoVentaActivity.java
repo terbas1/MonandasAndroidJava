@@ -82,9 +82,15 @@ public class InfoVentaActivity extends AppCompatActivity {
         butonActu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(estado_produc.equals("2")){
+                    Toast toast1 =
+                            Toast.makeText(getApplicationContext(),
+                                    "Esta actualizado", Toast.LENGTH_SHORT);
 
-                actualizar(id_venta,estado_produc);
-
+                    toast1.show();
+                }else {
+                    actualizar(id_venta, estado_produc);
+                }
             }
         });
     }
@@ -93,8 +99,6 @@ public class InfoVentaActivity extends AppCompatActivity {
         int estadoFinal=Integer.valueOf(estado);
         int enviarEstado=estadoFinal+1;
         if (enviarEstado==3){
-            enviarEstado=2;
-        }else if (enviarEstado==1){
             enviarEstado=2;
         }
 
