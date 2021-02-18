@@ -69,12 +69,6 @@ public class TableroActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
     }
     // Consumir api para las ventas
     private void getVenta(){
@@ -94,7 +88,7 @@ public class TableroActivity extends AppCompatActivity {
                 List<VentaPost> ventaList = response.body();
                 for (VentaPost ventapost:ventaList){
                     double content=0;
-                    content=ventapost.getVentas();
+                    content=Math.round(ventapost.getVentas());
 
                     ventas.append(""+content);
                 }
