@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"Bienvenido XD",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"Bienvenido",Toast.LENGTH_LONG).show();
                     LoginResponse loginResponse= response.body();
                     new Handler().postDelayed(new Runnable() {
                         @Override

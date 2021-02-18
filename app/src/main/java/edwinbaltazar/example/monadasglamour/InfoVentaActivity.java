@@ -70,13 +70,17 @@ public class InfoVentaActivity extends AppCompatActivity {
         //Estilo de los botones de acuerdo a su estado
         Drawable d1 = getResources().getDrawable(R.drawable.button_info);
         Drawable d2 = getResources().getDrawable(R.drawable.button_info2);
+        Drawable d3=getResources().getDrawable(R.drawable.button_amar);
 
         if(estado_produc.equals("2")) {
             butonActu.setBackground(d2);
-            butonActu.setText("Enviando producto");
-        }else {
-            butonActu.setBackground(d1);
-            butonActu.setText("Enviar producto");
+            butonActu.setText("Producto Entregado");
+        }else if (estado_produc.equals("1")){
+            butonActu.setBackground(d2);
+            butonActu.setText("Entregar Producto");
+        }else if (estado_produc.equals("0")){
+            butonActu.setBackground(d3);
+            butonActu.setText("Enviar Producto");
         }
         //Onclick del boton para cambiar su estilo
         butonActu.setOnClickListener(new View.OnClickListener() {
