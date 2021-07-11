@@ -6,33 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".TableroActivity"
     android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="sans-serif"
+        android:text="Tablero "
         android:textColor="#FFF"
         android:textSize="22sp"
-        android:text="Tablero "
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
+        android:src="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintTop_toBottomOf="@+id/perfil"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perfil" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,8 +83,8 @@
                     >
                     <ImageView
                         android:src="@drawable/iconsventas"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"/>
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
                     <TextView
                         android:id="@+id/txt_ventas"
                         android:layout_width="match_parent"
@@ -83,7 +92,7 @@
                         android:text="S/."
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        android:textSize="16dp"/>
 
                 </LinearLayout>
 
@@ -104,8 +113,8 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:src="@drawable/iconsvistas"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"/>
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
                     <TextView
                         android:id="@+id/txt_vistas"
                         android:layout_width="match_parent"

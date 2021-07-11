@@ -41,13 +41,13 @@ public class ListaDeVentasAdapter extends ArrayAdapter<ListaDeVentas> {
 
         ListaDeVentas listaDeVentas=listaDeVentass.get(position);
         TextView pago=convertView.findViewById(R.id.txt_pago);
-        pago.setText("S/."+listaDeVentas.getPago());
+        pago.setText(""+listaDeVentas.getPago());
         TextView fecha=convertView.findViewById(R.id.txt_fecha);
         fecha.setText(listaDeVentas.getFecha().substring(0,9));
         TextView proceso=convertView.findViewById(R.id.proceso);
 
 
-        proceso.setText(String.valueOf(listaDeVentas.getEnvio()) );
+        proceso.setText(String.valueOf(listaDeVentas.getEnvioText()) );
 
 
 

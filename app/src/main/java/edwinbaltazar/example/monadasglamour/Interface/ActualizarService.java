@@ -11,6 +11,6 @@ import retrofit2.http.PUT;
 
 public interface ActualizarService {
 
-    @PUT("listaVentas/actualizar")
+    @PUT("update12")
     Call<ActualizarResponse> putVenta(@Body ActualizarPost actualizarPost);
 }

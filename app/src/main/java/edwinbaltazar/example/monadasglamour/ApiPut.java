@@ -15,7 +15,7 @@ public class ApiPut {
 
         Retrofit retrofit= new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .client(okHttpClient)
                 .build();
         return retrofit;

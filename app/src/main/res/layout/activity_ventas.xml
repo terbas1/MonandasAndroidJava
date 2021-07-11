@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VentasActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    >
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +19,8 @@
         android:layout_margin="10dp"
         android:textStyle="bold|italic"
         android:textSize="20dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/bg_ventas_title"
+
         />
 
     <ListView
@@ -26,7 +29,7 @@
         android:id="@+id/venta_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f6f9fb"
+        android:background="@color/colorPrimary"
         tools:listitem="@layout/ventas_layout"
         >
 

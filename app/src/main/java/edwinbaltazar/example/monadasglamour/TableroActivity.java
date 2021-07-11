@@ -1,10 +1,14 @@
 package edwinbaltazar.example.monadasglamour;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,6 +41,7 @@ public class TableroActivity extends AppCompatActivity {
     MasVendidoListAdapter adapter;
     MasVendidoPost masVendidoPost;
     LinearLayout irVentas;
+    ImageView bottonLogut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,12 +54,13 @@ public class TableroActivity extends AppCompatActivity {
         productos=findViewById(R.id.txt_product);
         listProduct=(ListView) findViewById(R.id.list_produtosvendidos);
         irVentas=findViewById(R.id.cuadro_ventas);
+        bottonLogut=findViewById(R.id.logout);
 
 
         Intent intent= getIntent();
         if (intent.getExtras() != null){
             String Aperfil= intent.getStringExtra("data");
-            perfil.setText("Tablero de  : "+Aperfil);
+            perfil.setText("Tablero del "+Aperfil);
             getVenta();
             getVisitas();
             getUsuarios();
@@ -69,11 +75,19 @@ public class TableroActivity extends AppCompatActivity {
 
             }
         });
+        bottonLogut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+
+            }
+        });
+
     }
     // Consumir api para las ventas
     private void getVenta(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         VentasService ventasService=retrofit.create(VentasService.class);
@@ -88,7 +102,7 @@ public class TableroActivity extends AppCompatActivity {
                 List<VentaPost> ventaList = response.body();
                 for (VentaPost ventapost:ventaList){
                     double content=0;
-                    content=Math.round(ventapost.getVentas());
+                    content=Math.round(ventapost.getVentas()*100.0)/100.0;
 
                     ventas.append(""+content);
                 }
@@ -106,7 +120,7 @@ public class TableroActivity extends AppCompatActivity {
 
     private void getVisitas(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         VisitasService visitasService=retrofit.create(VisitasService.class);
@@ -137,7 +151,7 @@ public class TableroActivity extends AppCompatActivity {
     //Consumir api para la cantidad de usuarios
     private void getUsuarios(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         UsuariosService usuariosService=retrofit.create(UsuariosService.class);
@@ -168,7 +182,7 @@ public class TableroActivity extends AppCompatActivity {
     // Consumir api para las ventas
     private void getProductos(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ProductosService productosService=retrofit.create(ProductosService.class);
@@ -199,7 +213,7 @@ public class TableroActivity extends AppCompatActivity {
     //Lista
     private void getMasVendidos(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         MasVendidosService masVendidosService=retrofit.create(MasVendidosService.class);
@@ -220,5 +234,31 @@ public class TableroActivity extends AppCompatActivity {
                 Toast.makeText(TableroActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
+    }
+    private void logout(){
+        AlertDialog.Builder builder=new
+                AlertDialog.Builder(this,R.style.Theme_AppCompat_Dialog_Alert);
+
+        builder.setTitle("Sesión");
+        builder.setMessage("¿Desea Cerrar Sesión?");
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Log.d("Mensaje","CAncelo el cerrrar sesión");
+            }
+        });
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                acceptorLough();
+            }
+        });
+        AlertDialog dialog=builder.create();
+        dialog.show();
+    }
+    private  void acceptorLough(){
+        Intent intent3=new Intent(this,MainActivity.class);
+        intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent3);
     }
 }

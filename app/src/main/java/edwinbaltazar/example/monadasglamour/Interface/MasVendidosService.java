@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface MasVendidosService {
 
-    @GET("listaVentas/productosVendidos")
+    @GET("info5")
     Call<List<MasVendidoPost>> getMasVendidos();
 }

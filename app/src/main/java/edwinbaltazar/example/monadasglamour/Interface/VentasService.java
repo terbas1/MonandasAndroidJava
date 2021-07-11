@@ -7,7 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface VentasService {
-    @GET("listaVentas/ventas")
+    @GET("info1")
     Call<List<VentaPost>> getVenta();
 
 }

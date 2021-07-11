@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@drawable/bg_todo"
+    android:padding="2dp"
     >
 
     <TextView

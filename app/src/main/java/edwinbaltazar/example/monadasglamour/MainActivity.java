@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         loginRequest.setCorreo(email.getText().toString());
         loginRequest.setPassword(password.getText().toString());
 
-        Call<LoginResponse> loginResponseCall= ApiClient.getUserService().userLogin(loginRequest);
+        Call<LoginResponse> loginResponseCall= ApiClient.getUserService().userLogin( loginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     },700);
 
                 }else{
-                    Toast.makeText(MainActivity.this,"Login Fallido",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"Credenciales incorrectas",Toast.LENGTH_LONG).show();
 
                 }
             }

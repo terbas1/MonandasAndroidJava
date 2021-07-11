@@ -6,7 +6,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".InfoVentaActivity"
-    android:background="#AC2EB8">
+    android:background="@color/colorPrimary">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DETALLE DE LA VENTA"
+        android:textColor="#fff"
+        android:gravity="center_horizontal"
+        android:paddingVertical="15dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold|italic"
+        android:textSize="20dp"
+        android:background="@drawable/bg_ventas_title"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="25dp"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,14 +30,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="center_vertical"
+
             >
             <LinearLayout
                 android:layout_margin="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#FAD9ED"
+                android:background="@drawable/black_button_bg"
                 android:gravity="center">
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/nombre_producto"

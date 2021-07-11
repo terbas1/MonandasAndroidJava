@@ -27,8 +27,10 @@ public class ListaDeVentas {
     private String pago;
     @SerializedName("fecha")
     private String fecha;
+    @SerializedName("envioText")
+    private String envioText;
 
-    public ListaDeVentas(Integer id, Integer id_Usuario, Integer id_Producto, Integer envio, String metodo, String email, String direccion, String pais, Integer cantidad, String detalle, String pago, String fecha) {
+    public ListaDeVentas(Integer id, Integer id_Usuario, Integer id_Producto, Integer envio, String metodo, String email, String direccion, String pais, Integer cantidad, String detalle, String pago, String fecha,String envioText) {
         this.id = id;
         this.id_Usuario = id_Usuario;
         this.id_Producto = id_Producto;
@@ -41,6 +43,7 @@ public class ListaDeVentas {
         this.detalle = detalle;
         this.pago = pago;
         this.fecha = fecha;
+        this.envioText=envioText;
     }
 
     public Integer getId() {
@@ -138,4 +141,13 @@ public class ListaDeVentas {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public String getEnvioText() {
+        return envioText;
+    }
+
+    public void setEnvioText(String envioText) {
+        this.envioText = envioText;
+    }
+
 }

@@ -34,6 +34,7 @@ public class VentasActivity extends AppCompatActivity  {
     public static final String FECHA_CLIENTE="fecha";
     public static final String ID_VENTA="idVenta";
     public static final String ESTADO_PRO="estado";
+    public static final String ENVIO_TEXT="envioText";
 
 
     private ListView listViewVentas;
@@ -67,6 +68,7 @@ public class VentasActivity extends AppCompatActivity  {
                     detallInten.putExtra(PAGO_CLIENTE,listaDeVentas.getPago());
                     detallInten.putExtra(ID_VENTA,String.valueOf(listaDeVentas.getId()));
                     detallInten.putExtra(ESTADO_PRO,String.valueOf(listaDeVentas.getEnvio()));
+                    detallInten.putExtra(ENVIO_TEXT,listaDeVentas.getEnvioText());
 
                     String feacha1=listaDeVentas.getFecha();
                     String feacha2=feacha1.substring(0,9);
@@ -86,7 +88,7 @@ public class VentasActivity extends AppCompatActivity  {
     //Lista
     private void getMasVendidos(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ecommerce121942.herokuapp.com/")
+                .baseUrl("https://api2.bellasmonadas.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

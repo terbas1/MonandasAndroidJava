@@ -8,6 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface VisitasService {
-    @GET("listaVentas/visitas")
+    @GET("info2")
     Call<List<VisitaPost>> getVisitas();
 }

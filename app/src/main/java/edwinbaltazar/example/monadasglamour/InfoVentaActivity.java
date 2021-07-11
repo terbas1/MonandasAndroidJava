@@ -1,12 +1,15 @@
 package edwinbaltazar.example.monadasglamour;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,6 +54,7 @@ public class InfoVentaActivity extends AppCompatActivity {
         String id_venta=intent.getStringExtra(ID_VENTA);
         String estado_produc=String.valueOf(intent.getStringExtra(ESTADO_PRO));
 
+
         //Botón
         butonActu=findViewById(R.id.button_actualizar);
 
@@ -63,9 +67,9 @@ public class InfoVentaActivity extends AppCompatActivity {
         //enviado datos ala vista
         nombreProdu.setText(nombre_producto);
         emailCliet.setText(email_cliente);
-        cantProduc.setText(" "+cant_producto);
+        cantProduc.setText(" "+cant_producto+" unidad(es)");
         direcClient.setText(direc_cliente);
-        pagoClient.setText("S/. "+pago_cliente);
+        pagoClient.setText(" "+pago_cliente);
         fechaClient.setText(fecha_cliente);
         //Estilo de los botones de acuerdo a su estado
         Drawable d1 = getResources().getDrawable(R.drawable.button_info);
@@ -91,6 +95,7 @@ public class InfoVentaActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),
                                     "Esta actualizado", Toast.LENGTH_SHORT);
 
+                    startActivity(new Intent(InfoVentaActivity.this, VentasActivity.class));
                     toast1.show();
                 }else {
                     actualizar(id_venta, estado_produc);
@@ -99,41 +104,60 @@ public class InfoVentaActivity extends AppCompatActivity {
         });
     }
     public void actualizar(String idVenta, String estado){
-        int id_venta=Integer.valueOf(idVenta);
-        int estadoFinal=Integer.valueOf(estado);
-        int enviarEstado=estadoFinal+1;
-        if (enviarEstado==3){
-            enviarEstado=2;
-        }
-
-
-        ActualizarPost actualizarPost =new ActualizarPost();
-        actualizarPost.setId_venta(id_venta);
-        actualizarPost.setEstado(enviarEstado);
-
-        Call<ActualizarResponse> ActualizarResponseCall= ApiPut.getAtualizarService().putVenta(actualizarPost);
-        ActualizarResponseCall.enqueue(new Callback<ActualizarResponse>() {
+        AlertDialog.Builder builder=new
+                AlertDialog.Builder(this,R.style.Theme_AppCompat_Dialog);
+        builder.setTitle("Actualizar");
+        builder.setMessage("¿Desea actualizar la compra?");
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
-            public void onResponse(Call<ActualizarResponse> call, Response<ActualizarResponse> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(InfoVentaActivity.this,"Se Actualizo",Toast.LENGTH_LONG).show();
-                    ActualizarResponse actualizarResponse= response.body();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            ActualizarResponse actualizarResponse= response.body();
-                            startActivity(new Intent(InfoVentaActivity.this, ListaDeVentas.class).putExtra("Message",actualizarResponse.getMessage()));
-
-                        }
-                    },500);
-                }else{
-                        Toast.makeText(InfoVentaActivity.this,"Error",Toast.LENGTH_LONG).show();
-                    }
-                }
-            @Override
-            public void onFailure(Call<ActualizarResponse> call, Throwable t) {
-                Toast.makeText(InfoVentaActivity.this,"Throwable"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Log.d("Mensaje","Cancelo el cerrrar sesión");
             }
         });
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                int id_venta=Integer.valueOf(idVenta);
+                int estadoFinal=Integer.valueOf(estado);
+                int enviarEstado=estadoFinal+1;
+                if (enviarEstado==3){
+                    enviarEstado=2;
+                }
+                ActualizarPost actualizarPost =new ActualizarPost();
+                actualizarPost.setId_venta(id_venta);
+                actualizarPost.setEstado(enviarEstado);
+
+                Call<ActualizarResponse> ActualizarResponseCall= ApiPut.getAtualizarService().putVenta(actualizarPost);
+
+                ActualizarResponseCall.enqueue(new Callback<ActualizarResponse>() {
+                    @Override
+                    public void onResponse(Call<ActualizarResponse> call, Response<ActualizarResponse> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(InfoVentaActivity.this,"Se Actualizo",Toast.LENGTH_LONG).show();
+                            ActualizarResponse actualizarResponse= response.body();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ActualizarResponse actualizarResponse= response.body();
+                                    startActivity(new Intent(InfoVentaActivity.this, TableroActivity.class).putExtra("Message",actualizarResponse.getMessage()));
+
+                                }
+                            },500);
+                        }else{
+                            Toast.makeText(InfoVentaActivity.this,"Error",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<ActualizarResponse> call, Throwable t) {
+                        Toast.makeText(InfoVentaActivity.this,"Throwable"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+        AlertDialog dialog=builder.create();
+        dialog.show();
+
+
     }
 }

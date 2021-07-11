@@ -15,6 +15,7 @@
         <activity android:name=".InfoVentaActivity"></activity>
         <activity android:name=".VentasActivity" />
         <activity android:name=".TableroActivity" />
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplahThem">

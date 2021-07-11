@@ -7,6 +7,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ProductosService {
-    @GET("listaVentas/productos")
+    @GET("info4")
     Call<List<ProductoPost>> getProductos();
 }
