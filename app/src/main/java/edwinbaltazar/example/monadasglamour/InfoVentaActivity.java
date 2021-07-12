@@ -69,7 +69,7 @@ public class InfoVentaActivity extends AppCompatActivity {
         emailCliet.setText(email_cliente);
         cantProduc.setText(" "+cant_producto+" unidad(es)");
         direcClient.setText(direc_cliente);
-        pagoClient.setText(" "+pago_cliente);
+        pagoClient.setText("$"+pago_cliente);
         fechaClient.setText(fecha_cliente);
         //Estilo de los botones de acuerdo a su estado
         Drawable d1 = getResources().getDrawable(R.drawable.button_info);

@@ -103,7 +103,6 @@ public class TableroActivity extends AppCompatActivity {
                 for (VentaPost ventapost:ventaList){
                     double content=0;
                     content=Math.round(ventapost.getVentas()*100.0)/100.0;
-
                     ventas.append(""+content);
                 }
 

@@ -32,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -46,83 +47,89 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="410dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/bg_menu"
+        android:backgroundTint="#f6f9fb"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bg_menu"
-        android:backgroundTint="#f6f9fb">
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
         <LinearLayout
-            android:paddingTop="24dp"
-            android:paddingBottom="24dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingTop="24dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="24dp">
+
             <LinearLayout
-                android:background="#fff"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                >
+                android:layout_weight="1"
+                android:background="#fff"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:id="@+id/cuadro_ventas"
                     android:layout_width="match_parent"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/bg_ventas"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    >
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_ventas"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
                     <ImageView
-                        android:src="@drawable/iconsventas"
                         android:layout_width="48dp"
-                        android:layout_height="48dp"/>
+                        android:layout_height="48dp"
+                        android:src="@drawable/iconsventas" />
+
                     <TextView
                         android:id="@+id/txt_ventas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="S/."
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="16dp"/>
+                        android:text="$"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:background="#fff"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                >
+                android:layout_weight="1"
+                android:background="#fff"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/bg_visitas"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:background="@drawable/bg_visitas"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
                     <ImageView
-                        android:src="@drawable/iconsvistas"
+                        android:layout_marginVertical="4dp"
                         android:layout_width="40dp"
-                        android:layout_height="40dp"/>
+                        android:layout_height="40dp"
+                        android:src="@drawable/iconsvistas" />
+
                     <TextView
                         android:id="@+id/txt_vistas"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text=""
-                        android:textStyle="bold"
                         android:gravity="center"
-                        android:textSize="18dp"/>
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -131,72 +138,77 @@
         </LinearLayout>
 
         <LinearLayout
-            android:paddingTop="24dp"
-            android:paddingBottom="24dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingTop="24dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="24dp">
+
             <LinearLayout
-                android:background="#fff"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                >
+                android:layout_weight="1"
+                android:background="#fff"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/bg_usuarios"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    >
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_usuarios"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
                     <ImageView
-                        android:src="@drawable/iconusuarios"
                         android:layout_width="50dp"
-                        android:layout_height="50dp"/>
+                        android:layout_height="50dp"
+                        android:src="@drawable/iconusuarios" />
+
                     <TextView
                         android:id="@+id/txt_usuarios"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text=""
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:background="#fff"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                >
+                android:layout_weight="1"
+                android:background="#fff"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:paddingRight="10dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/bg_productos"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:background="@drawable/bg_productos"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
                     <ImageView
-                        android:src="@drawable/iconropa"
                         android:layout_width="50dp"
-                        android:layout_height="50dp"/>
+                        android:layout_height="50dp"
+                        android:src="@drawable/iconropa" />
+
                     <TextView
                         android:id="@+id/txt_product"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text=""
-                        android:textStyle="bold"
                         android:gravity="center"
-                        android:textSize="18dp"/>
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -207,27 +219,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#f6f9fb"
-            android:padding="1dp"
             android:layout_margin="1dp"
-        >
+            android:background="#f6f9fb"
+            android:orientation="vertical"
+            android:padding="1dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PRODUCTOS MÁS VENDIDOS"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="sans-serif"
-                android:textSize="16dp"
+                android:text="PRODUCTOS MÁS VENDIDOS"
                 android:textColor="#000000"
-                android:textStyle="bold"/>
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
             <ListView
+                android:id="@+id/list_produtosvendidos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/list_produtosvendidos"
 
                 />
-
 
 
         </LinearLayout>
